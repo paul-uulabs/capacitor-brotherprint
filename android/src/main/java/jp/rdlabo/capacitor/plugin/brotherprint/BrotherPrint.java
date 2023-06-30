@@ -19,9 +19,10 @@ import com.getcapacitor.NativePlugin;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
+import com.getcapacitor.annotation.CapacitorPlugin;
 import java.util.List;
 
-@NativePlugin
+@CapacitorPlugin
 public class BrotherPrint extends Plugin {
 
     @PluginMethod
@@ -67,17 +68,20 @@ public class BrotherPrint extends Plugin {
                 final String ipAddress = call.getString("ipAddress");
 
                 if (localName != null) {
+                    Log.d("protocol", "localName");
                     settings.port = PrinterInfo.Port.BLUETOOTH;
                     settings.setLocalName(localName);
                 } else if (ipAddress != null) {
+                    Log.d("protocol", "ipAddress");
                     settings.port = PrinterInfo.Port.NET;
                     settings.ipAddress = ipAddress;
                 } else {
+                    Log.d("protocol", "USB");
                     settings.port = PrinterInfo.Port.USB;
                 }
                 break;
             default:
-                call.error("[ERROR] This printerType is not available");
+                call.reject("[ERROR] This printerType is not available");
                 return;
         }
 
@@ -123,10 +127,10 @@ public class BrotherPrint extends Plugin {
                 }
             )
                 .start();
-            call.success(new JSObject().put("value", true));
+            call.resolve();
         } catch (Exception ex) {
             notifyListeners("onPrintFailedCommunication", new JSObject().put("value", ""));
-            call.error(ex.getLocalizedMessage(), ex);
+            call.reject(ex.getLocalizedMessage(), ex);
         }
     }
 
@@ -149,7 +153,7 @@ public class BrotherPrint extends Plugin {
             }
         )
             .start();
-        call.success(new JSObject().put("value", true));
+        call.resolve();
     }
 
     @PluginMethod
@@ -171,7 +175,7 @@ public class BrotherPrint extends Plugin {
             }
         )
             .start();
-        call.success(new JSObject().put("value", true));
+        call.resolve();
     }
 
     @PluginMethod
