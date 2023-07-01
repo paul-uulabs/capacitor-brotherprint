@@ -1,0 +1,276 @@
+{
+  "api": {
+    "name": "BrotherPrintPlugin",
+    "slug": "brotherprintplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "printImage",
+        "signature": "(options: BrotherPrintOptions) => Promise<{ value: boolean; }>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "BrotherPrintOptions"
+          }
+        ],
+        "returns": "Promise<{ value: boolean; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "BrotherPrintOptions"
+        ],
+        "slug": "printimage"
+      },
+      {
+        "name": "searchWiFiPrinter",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "searchwifiprinter"
+      },
+      {
+        "name": "searchBLEPrinter",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "searchbleprinter"
+      },
+      {
+        "name": "retrieveBluetoothPrinter",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "retrievebluetoothprinter"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'onPrint', listenerFunc: (info: { value: string; }) => void) => PluginListenerHandle",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'onPrint'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(info: { value: string; }) => void"
+          }
+        ],
+        "returns": "PluginListenerHandle",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "PluginListenerHandle"
+        ],
+        "slug": "addlisteneronprint"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'onRetrieveBluetoothPrinter', listenerFunc: (info: { serialNumberList: any[]; }) => void) => PluginListenerHandle",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'onRetrieveBluetoothPrinter'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(info: { serialNumberList: any[]; }) => void"
+          }
+        ],
+        "returns": "PluginListenerHandle",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "PluginListenerHandle"
+        ],
+        "slug": "addlisteneronretrievebluetoothprinter"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'onBLEAvailable', listenerFunc: (info: { localNameList: any[]; }) => void) => PluginListenerHandle",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'onBLEAvailable'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(info: { localNameList: any[]; }) => void"
+          }
+        ],
+        "returns": "PluginListenerHandle",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "PluginListenerHandle"
+        ],
+        "slug": "addlisteneronbleavailable"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'onIpAddressAvailable', listenerFunc: (info: { ipAddressList: any[]; }) => void) => PluginListenerHandle",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'onIpAddressAvailable'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(info: { ipAddressList: any[]; }) => void"
+          }
+        ],
+        "returns": "PluginListenerHandle",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "PluginListenerHandle"
+        ],
+        "slug": "addlisteneronipaddressavailable"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'onPrintFailedCommunication', listenerFunc: (info: { value: string; }) => void) => PluginListenerHandle",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'onPrintFailedCommunication'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(info: { value: string; }) => void"
+          }
+        ],
+        "returns": "PluginListenerHandle",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "PluginListenerHandle"
+        ],
+        "slug": "addlisteneronprintfailedcommunication"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'onPrintError', listenerFunc: (info: { value: string; }) => void) => PluginListenerHandle",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'onPrintError'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(info: { value: string; }) => void"
+          }
+        ],
+        "returns": "PluginListenerHandle",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "PluginListenerHandle"
+        ],
+        "slug": "addlisteneronprinterror"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [
+    {
+      "name": "BrotherPrintOptions",
+      "slug": "brotherprintoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "encodedImage",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "printerType",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "serialNumber",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "numberOfCopies",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "labelNameIndex",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "ipAddress",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "localName",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        }
+      ]
+    },
+    {
+      "name": "PluginListenerHandle",
+      "slug": "pluginlistenerhandle",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "remove",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "() => Promise<void>"
+        }
+      ]
+    }
+  ],
+  "enums": [],
+  "typeAliases": [],
+  "pluginConfigs": []
+}
